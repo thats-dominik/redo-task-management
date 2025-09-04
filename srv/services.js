@@ -18,11 +18,13 @@ class TaskService extends cds.ApplicationService {
 
 
     this.before('CREATE', 'Tasks', (req) => {
+      req.data.creator_ID = req.user.id
       const t = req.data?.title || ''
       if (/urgent/i.test(t)) req.data.urgency_code = 'H'
     })
 
     this.before('UPDATE', 'Tasks', async (req) => {
+      if ('creator_ID' in req.data) delete req.data.creator_ID
       const id = req.data?.ID
       if (!id) return
 

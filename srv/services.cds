@@ -17,7 +17,7 @@ service TaskService {
     { grant: ['READ','CREATE','UPDATE','DELETE'],   to: 'chef' }
   ]
   entity Tasks as projection on my.Tasks {
-    ID, creator, assignee, title, description, urgency, status, dueAt, comments,
+    ID, @Core.Computed creator, assignee, title, description, urgency, status, dueAt, comments,
     createdAt, createdBy, modifiedAt, modifiedBy
   };
 

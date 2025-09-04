@@ -7,11 +7,6 @@ annotate service.Tasks with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>Creator}',
-                Value : creator_ID,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : 'assignee_ID',
                 Value : assignee_ID,
             },
@@ -133,28 +128,9 @@ annotate service.Tasks with @Capabilities.DeleteRestrictions : {
 
 annotate service.Tasks with {
     creator @(
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'Users',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : creator_ID,
-                    ValueListProperty : 'ID',
-                },
-                {
-                    $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'name',
-                },
-                {
-                    $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'email',
-                },
-            ],
-        },
+        Core.Computed : true,
         Common.Text : creator.ID,
         Common.Text.@UI.TextArrangement : #TextOnly,
-        Common.ValueListWithFixedValues : true,
         )
 };
 
