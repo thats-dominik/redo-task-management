@@ -1,0 +1,39 @@
+{
+  "xsappname": "redo-task-management",
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.praktikant",
+      "description": "praktikant"
+    },
+    {
+      "name": "$XSAPPNAME.mitarbeiter",
+      "description": "mitarbeiter"
+    },
+    {
+      "name": "$XSAPPNAME.chef",
+      "description": "chef"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "praktikant",
+      "scope-references": [
+        "$XSAPPNAME.praktikant"
+      ]
+    },
+    {
+      "name": "mitarbeiter",
+      "scope-references": [
+        "$XSAPPNAME.mitarbeiter"
+      ]
+    },
+    {
+      "name": "chef",
+      "scope-references": [
+        "$XSAPPNAME.chef"
+      ]
+    }
+  ],
+  "attributes": []
+}

@@ -1,0 +1,11 @@
+code,locale,name,descr
+N,de,Neu,neu erfasst
+P,de,In Arbeit,wird bearbeitet
+B,de,Blockiert,wartet auf Entsperrung
+D,de,Erledigt,abgeschlossen
+X,de,Abgebrochen,nicht weiterverfolgt
+N,en,New,newly created
+P,en,In Progress,being worked on
+B,en,Blocked,waiting for unblock
+D,en,Done,completed
+X,en,Canceled,no longer pursued

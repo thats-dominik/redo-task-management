@@ -1,0 +1,4 @@
+ID,username,firstName,lastName,email,phone,createdAt,createdBy,modifiedAt,modifiedBy
+heiko,heiko,Heiko,Chef,heiko@example.com,+41000000001,2025-09-03T08:00:00Z,system,2025-09-03T08:00:00Z,system
+heiker,heiker,Heiker,Mitarbeiter,heiker@example.com,+41000000002,2025-09-03T08:00:00Z,system,2025-09-03T08:00:00Z,system
+heikel,heikel,Heikel,Praktikant,heikel@example.com,+41000000003,2025-09-03T08:00:00Z,system,2025-09-03T08:00:00Z,system

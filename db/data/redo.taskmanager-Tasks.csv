@@ -1,0 +1,4 @@
+ID,creator_ID,assignee_ID,title,description,urgency_code,status_code,dueAt,createdAt,createdBy,modifiedAt,modifiedBy
+7f2d7a2a-9c3f-4f3a-8d4e-1f5f8b2b1001,heiko,heiker,Onboarding Checkliste,zugänge anlegen und repositories freischalten,M,N,2025-09-10T16:00:00Z,2025-09-03T08:10:00Z,heiko,2025-09-03T08:10:00Z,heiko
+a3b1c4d5-e6f7-48a9-bc01-223344556601,heiker,heikel,UI5 App Grundgerüst,app aus generator erstellen und laufen lassen,H,P,2025-09-05T14:00:00Z,2025-09-03T08:12:00Z,heiker,2025-09-03T08:20:00Z,heiker
+bbccdde0-1122-43aa-8899-ffeeddccbbaa,heiko,heiko,CDS Schema Review,entities prüfen und daten laden,L,D,2025-09-04T12:00:00Z,2025-09-03T08:15:00Z,heiko,2025-09-03T09:00:00Z,heiko

@@ -1,0 +1,6 @@
+code,criticality,name,descr
+N,2,Neu,neu erfasst
+P,2,In Arbeit,wird bearbeitet
+B,3,Blockiert,wartet auf Entsperrung
+D,1,Erledigt,abgeschlossen
+X,2,Abgebrochen,nicht weiterverfolgt

@@ -1,0 +1,4 @@
+code,criticality,name,descr
+H,3,Hoch,zeitkritisch
+M,2,Mittel,normal wichtig
+L,1,Niedrig,geringe Priorität

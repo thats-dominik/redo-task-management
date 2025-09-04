@@ -1,0 +1,7 @@
+code,locale,name,descr
+H,de,Hoch,zeitkritisch
+M,de,Mittel,normal wichtig
+L,de,Niedrig,geringe Priorität
+H,en,High,time critical
+M,en,Medium,normal priority
+L,en,Low,low priority
