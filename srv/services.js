@@ -3,19 +3,30 @@ const cds = require('@sap/cds')
 class TaskService extends cds.ApplicationService {
   init() {
 
-    // CREATE: urgency automatisch auf 'H', wenn "urgent" im Titel
+    this.on('READ', 'UiConfig', (req) => {
+      const u = req.user
+      const isChef        = u.is('chef')
+      const isMitarbeiter = u.is('mitarbeiter')
+      const isPraktikant  = u.is('praktikant')
+
+      return {
+        ID: 'singleton',
+        canUpdate: (isChef || isMitarbeiter) && !isPraktikant, // praktikant=false
+        canDelete: isChef                                      // nur chef=true
+      }
+    })
+
+
     this.before('CREATE', 'Tasks', (req) => {
       const t = req.data?.title || ''
       if (/urgent/i.test(t)) req.data.urgency_code = 'H'
     })
 
-    // UPDATE: gesperrt, wenn bereits Done (D) oder Canceled (X)
     this.before('UPDATE', 'Tasks', async (req) => {
       const id = req.data?.ID
       if (!id) return
 
-      // aktuellen Status aus der DB lesen (Persistenz-Entität!)
-      const { Tasks } = cds.entities['redo.taskmanager']   // db-Entität
+      const { Tasks } = cds.entities['redo.taskmanager']   // db Entität
       const row = await SELECT.one.from(Tasks).columns('status_code').where({ ID: id })
       if (!row) return
 

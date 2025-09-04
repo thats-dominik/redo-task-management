@@ -13,5 +13,10 @@ cds.on('bootstrap', app => {
     res.json({ user: req.user?.id, roles: req.user?.roles })
   })
 })
+
+//UI Hidden
+
+
 })
 module.exports = cds.server
+cds

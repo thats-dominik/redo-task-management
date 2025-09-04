@@ -120,7 +120,16 @@ annotate service.Tasks with @(
             },
         ],
     },
+    UI.DeleteHidden : { $edmJson: { $Not: { $Path: '/TaskService.EntityContainer/UiConfig/canDelete' } } },
+    UI.UpdateHidden : { $edmJson: { $Not: { $Path: '/TaskService.EntityContainer/UiConfig/canUpdate' } } },
+    
+    
 );
+
+annotate service.Tasks with @Capabilities.DeleteRestrictions : {
+  Deletable : { $edmJson : { $Path : '/TaskService.EntityContainer/UiConfig/canDelete' } }
+};
+
 
 annotate service.Tasks with {
     creator @(
@@ -143,10 +152,10 @@ annotate service.Tasks with {
                 },
             ],
         },
-        Common.Text : creator.name,
+        Common.Text : creator.ID,
         Common.Text.@UI.TextArrangement : #TextOnly,
         Common.ValueListWithFixedValues : true,
-    )
+        )
 };
 
 annotate service.Tasks with {
